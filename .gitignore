@@ -1,0 +1,34 @@
+# Environment variables
+.env
+
+# Magento source code
+src/*
+!src/.gitkeep
+
+# Backups
+*.sql
+backup_*.sql
+
+# Docker volumes data
+mysql_data/
+elasticsearch_data/
+redis_data/
+rabbitmq_data/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
