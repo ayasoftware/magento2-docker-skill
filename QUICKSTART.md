@@ -8,7 +8,7 @@ A complete, production-ready Magento 2 development environment with:
 - ✅ Nginx (web server)
 - ✅ PHP 8.2-FPM (all Magento extensions)
 - ✅ MySQL 8.0 (optimized for Magento)
-- ✅ Elasticsearch 7.17 (search engine)
+- ✅ OpenSearch 2.11 (search engine)
 - ✅ Redis 7 (cache & sessions)
 - ✅ RabbitMQ 3 (message queue)
 - ✅ phpMyAdmin (database UI)

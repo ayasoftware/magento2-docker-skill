@@ -34,7 +34,7 @@ services:
     depends_on:
       - mysql
       - redis
-      - elasticsearch
+      - opensearch
     networks:
       - magento
 
@@ -56,18 +56,19 @@ services:
     networks:
       - magento
 
-  # Elasticsearch 7.17 (for Magento 2.4.4+)
-  elasticsearch:
-    image: elasticsearch:7.17.15
-    container_name: magento2_elasticsearch
+  # OpenSearch 2.x (for Magento 2.4.4+)
+  opensearch:
+    image: opensearchproject/opensearch:2.11.1
+    container_name: magento2_opensearch
     environment:
       - discovery.type=single-node
-      - xpack.security.enabled=false
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - plugins.security.disabled=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
     ports:
       - "9200:9200"
     volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
+      - opensearch_data:/usr/share/opensearch/data
     networks:
       - magento
 
@@ -128,6 +129,6 @@ networks:
 
 volumes:
   mysql_data:
-  elasticsearch_data:
+  opensearch_data:
   redis_data:
   rabbitmq_data:

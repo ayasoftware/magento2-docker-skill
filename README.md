@@ -55,7 +55,7 @@ A production-ready Docker environment for Magento 2 development with all require
 | Nginx | Alpine | 80, 443 | Web server |
 | PHP-FPM | 8.2 | 9000 | PHP processing |
 | MySQL | 8.0 | 3306 | Database |
-| Elasticsearch | 7.17 | 9200 | Search engine |
+| OpenSearch | 2.11 | 9200 | Search engine |
 | Redis | 7 | 6379 | Cache & sessions |
 | RabbitMQ | 3 | 5672, 15672 | Message queue |
 
@@ -216,7 +216,7 @@ Three separate databases:
 - DB 1: Page cache
 - DB 2: Sessions
 
-### Elasticsearch Configuration
+### OpenSearch Configuration
 
 - Single node setup
 - Security disabled (development)
@@ -262,14 +262,14 @@ docker-compose logs mysql
 docker-compose restart mysql
 ```
 
-### Elasticsearch Connection Errors
+### OpenSearch Connection Errors
 
 ```bash
-# Check Elasticsearch health
+# Check OpenSearch health
 curl http://localhost:9200/_cluster/health?pretty
 
 # Restart if needed
-docker-compose restart elasticsearch
+docker-compose restart opensearch
 ```
 
 ### Out of Memory
@@ -301,7 +301,7 @@ This setup is optimized for **development only**. For production:
 1. Enable HTTPS with proper certificates
 2. Secure Redis with password
 3. Configure MySQL root password
-4. Enable Elasticsearch security
+4. Enable OpenSearch security
 5. Use production mode
 6. Enable all security features
 7. Review `app/etc/env.php` settings

@@ -28,8 +28,8 @@ DB_NAME="magento2"
 DB_USER="magento"
 DB_PASSWORD="magento"
 
-ELASTICSEARCH_HOST="elasticsearch"
-ELASTICSEARCH_PORT="9200"
+OPENSEARCH_HOST="opensearch"
+OPENSEARCH_PORT="9200"
 
 REDIS_HOST="redis"
 REDIS_PORT="6379"
@@ -69,9 +69,9 @@ docker-compose exec php-fpm bin/magento setup:install \
     --timezone=America/New_York \
     --use-rewrites=1 \
     --backend-frontname=$BACKEND_FRONTNAME \
-    --search-engine=elasticsearch7 \
-    --elasticsearch-host=$ELASTICSEARCH_HOST \
-    --elasticsearch-port=$ELASTICSEARCH_PORT \
+    --search-engine=opensearch \
+    --opensearch-host=$OPENSEARCH_HOST \
+    --opensearch-port=$OPENSEARCH_PORT \
     --session-save=redis \
     --session-save-redis-host=$REDIS_HOST \
     --session-save-redis-port=$REDIS_PORT \
