@@ -18,7 +18,7 @@ This skill provides a complete, production-ready Docker environment for Magento 
 - Nginx web server (Alpine)
 - PHP 8.2-FPM with all Magento extensions
 - MySQL 8.0 with optimized configuration
-- Elasticsearch 7.17 for search
+- OpenSearch 2.11 for search
 - Redis 7 for cache and sessions
 - RabbitMQ 3 for message queuing
 - phpMyAdmin for database management
@@ -188,7 +188,7 @@ docker-compose exec -T mysql mysql -umagento -pmagento magento2 < backup.sql
 | phpMyAdmin | http://localhost:8080 | root/root |
 | Mailhog | http://localhost:8025 | - |
 | RabbitMQ | http://localhost:15672 | magento/magento |
-| Elasticsearch | http://localhost:9200 | - |
+| OpenSearch | http://localhost:9200 | - |
 
 ## Customization Points
 
@@ -243,7 +243,7 @@ sudo lsof -i :80
 # Stop the service or change port in docker-compose.yml
 ```
 
-### Elasticsearch Won't Start
+### OpenSearch Won't Start
 ```bash
 # Increase vm.max_map_count (Linux)
 sudo sysctl -w vm.max_map_count=262144
@@ -260,7 +260,7 @@ For production:
 - Enable HTTPS with proper certificates
 - Secure Redis with password
 - Change all default passwords
-- Enable Elasticsearch security
+- Enable OpenSearch security
 - Use production mode
 - Review `app/etc/env.php`
 - Enable 2FA
@@ -319,7 +319,7 @@ This skill can be combined with:
 - **Magento**: 2.4.4 to 2.4.7 (configurable in install script)
 - **PHP**: 8.1, 8.2, 8.3
 - **MySQL**: 8.0, 8.4
-- **Elasticsearch**: 7.17, 8.x (requires config changes)
+- **OpenSearch**: 2.x (compatible with Magento 2.4.4+)
 - **Docker**: 20.10+
 - **Docker Compose**: 2.0+
 

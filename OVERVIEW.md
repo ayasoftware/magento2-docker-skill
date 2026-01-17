@@ -19,7 +19,7 @@ Like the LinkedIn post describes, this is a modular "Skill" you can:
 - Pre-configured for Magento 2.4.6+
 - Optimized PHP, Nginx, MySQL settings
 - Redis cache setup
-- Elasticsearch configured
+- OpenSearch configured
 - Development tools included
 
 ### 2. **Production-Grade Setup**
@@ -88,10 +88,10 @@ export COMPOSER_PASSWORD="your_secret"
 └─┬──────────┬──────────┬──────────┬──────────┘
   │          │          │          │
   │          │          │          │
-┌─▼───────┐ ┌▼────────┐ ┌▼───────┐ ┌▼─────────┐
-│ MySQL   │ │ Redis   │ │Elastic │ │ RabbitMQ │
-│  :3306  │ │ :6379   │ │ :9200  │ │  :5672   │
-└─────────┘ └─────────┘ └────────┘ └──────────┘
+┌─▼───────┐ ┌▼────────┐ ┌▼──────────┐ ┌▼─────────┐
+│ MySQL   │ │ Redis   │ │OpenSearch│ │ RabbitMQ │
+│  :3306  │ │ :6379   │ │  :9200   │ │  :5672   │
+└─────────┘ └─────────┘ └──────────┘ └──────────┘
 ```
 
 ## Key Features
@@ -303,7 +303,7 @@ This skill can be combined with:
 | Magento | 2.4.4 - 2.4.7 |
 | PHP | 8.1, 8.2, 8.3 |
 | MySQL | 8.0, 8.4 |
-| Elasticsearch | 7.17 |
+| OpenSearch | 2.x |
 | Docker | 20.10+ |
 | Docker Compose | 2.0+ |
 

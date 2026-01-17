@@ -134,8 +134,8 @@ health: ## Check system health
 	@echo "$(YELLOW)Container Status:$(NC)"
 	@docker-compose ps
 	@echo ""
-	@echo "$(YELLOW)Elasticsearch Health:$(NC)"
-	@curl -s http://localhost:9200/_cluster/health?pretty | grep status || echo "Elasticsearch not responding"
+	@echo "$(YELLOW)OpenSearch Health:$(NC)"
+	@curl -s http://localhost:9200/_cluster/health?pretty | grep status || echo "OpenSearch not responding"
 	@echo ""
 	@echo "$(YELLOW)Redis Status:$(NC)"
 	@docker-compose exec redis redis-cli ping || echo "Redis not responding"
